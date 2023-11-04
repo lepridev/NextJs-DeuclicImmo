@@ -10,34 +10,42 @@ import { Button } from "../buttons/Button";
 import { AiFillHeart } from "react-icons/ai";
 
 interface Props {
-  id: number;
-  imgSrc?: any;
-  typeLabel?: string;
-  price?: number;
-  adress?: string;
-  rates?: string;
-  bed?: string;
+  id: string;
   bath?: string;
-  area?: number;
+  imgSrc?: string;
+  bed?: string;
+  caution?: string;
   city?: string;
-  buttonLabel?: string;
+  contenu?: string;
+  description?: string;
+  location?: string;
+  parking?: string;
+  price?: string;
+  square?: string;
+  titre?: string;
+  rates?: number;
+  buttonLabel: string;
 }
 
 const OffertBoxHorizontal = ({
   id,
   imgSrc = "/assets/images/maison1.jpg",
-  typeLabel,
-  price,
-  adress,
-  rates,
-  bed,
   bath,
-  area,
+  bed,
+  caution,
   city,
+  contenu,
+  description,
+  location,
+  parking,
+  price,
+  square,
+  titre,
+  rates = 3,
   buttonLabel,
 }: Props) => {
   return (
-    <div className=" w-[330px] h-[400px] border border-gray-10 rounded-md">
+    <div className=" w-[90%] h-[400px] border border-gray-10 rounded-md">
       <div className=" flex flex-row items-start justify-start w-full h-[48%] relative">
         <Image
           src={imgSrc}
@@ -53,13 +61,13 @@ const OffertBoxHorizontal = ({
         <div className="space-y-2 px-4">
           <div className="flex flex-row items-center justify-between">
             <div className="flex items-center justify-center py-1 px-2 rounded-2xl bg-gray-200">
-              <Typograpy variant="caption1" component="span" theme="secondary">
-                {typeLabel}
+              <Typograpy variant="caption4" component="span" theme="secondary">
+                {titre}
               </Typograpy>
             </div>
             <div className="">
               <Typograpy
-                variant="lead"
+                variant="body-sm"
                 component="h3"
                 theme="secondary"
                 weight="bold"
@@ -74,14 +82,14 @@ const OffertBoxHorizontal = ({
               weight="semibold"
               className="hover:text-[#ffa50d] cursor-pointer"
             >
-              {adress}
+              {location}
             </Typograpy>
-            <div className="font-bold">{rates}</div>
+            <div className="font-bold">{rates}/5</div>
           </div>
           <div className="flex flex-row items-center justify-end gap-3 pb-3">
             <Comodite label={bed} icon={{ icon: FaBed }} />
             <Comodite label={bath} icon={{ icon: FaBath }} />
-            <Comodite label={area} icon={{ icon: BiArea }} />
+            <Comodite label={square} icon={{ icon: BiArea }} />
           </div>
         </div>
         <div className="flex flex-row h-[50%] items-center justify-between px-4  border-t border-gray-300 ">

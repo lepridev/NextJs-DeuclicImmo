@@ -1,10 +1,29 @@
+"use client";
 import OffertBoxHorizontal from "@/ui/box/OffertBoxHorizontal";
 import { Button } from "@/ui/buttons/Button";
 import Container from "@/ui/container/Container";
 import { Titleline } from "@/ui/titleLine/titleline";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Spinner from "@/ui/spinner/Spinner";
+import { icons } from "react-icons";
 
 const RecentOfforts = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const getRecentOfferts = async () => {
+    setLoading(true);
+    const res = await axios.get("http://localhost:3000/api/properties");
+    console.log("first", res);
+    setData(res.data.getAllOfferts);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    getRecentOfferts();
+  }, []);
+
   const recentOffres = [
     {
       id: 1,
@@ -85,6 +104,9 @@ const RecentOfforts = () => {
       buttonLabel: "voir",
     },
   ];
+
+  console.log("data", data);
+
   return (
     <div className="bg-slate-100">
       <Container className="flex flex-col items-center justify-center">
@@ -92,27 +114,35 @@ const RecentOfforts = () => {
           title="Explorer dans les Meilleurs Androits"
           description="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores"
         />
-        <div className="w-full flex flex-col items-center justify-center gap-4 md:grid md:grid-cols-3 md:gap-3 md:justify-center md:justify-items-center">
-          {recentOffres.map((offre) => (
-            <OffertBoxHorizontal
-              key={offre.id}
-              id={offre.id}
-              imgSrc={offre.imgSrc}
-              typeLabel={offre.typeLabel}
-              price={offre.price}
-              adress={offre.adress}
-              rates={offre.rates}
-              bed={offre.bed}
-              bath={offre.bath}
-              area={offre.area}
-              city={offre.city}
-              buttonLabel={offre.buttonLabel}
-            />
-          ))}
-        </div>
-        <Button className="mt-5" size="large">
-          Voir plus d'offres
-        </Button>
+
+        {loading ? (
+          <div className="w-full h-[200] py-20">
+            <Spinner />
+          </div>
+        ) : (
+          <div className="w-full flex flex-col items-center justify-center gap-4 md:grid md:grid-cols-3  md:justify-center md:justify-items-center">
+            {data.map((offert) => (
+              <OffertBoxHorizontal
+                key={offert._id}
+                id={offert._id}
+                bath={offert.bath}
+                bed={offert.bed}
+                city={offert.city}
+                location={offert.location}
+                buttonLabel="Voir"
+                titre={offert.titre}
+                square={offert.square}
+                price={offert.price}
+              />
+            ))}
+          </div>
+        )}
+
+        {loading === false && (
+          <Button className="mt-5" size="large">
+            Voir plus doffres
+          </Button>
+        )}
       </Container>
     </div>
   );

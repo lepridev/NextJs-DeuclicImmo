@@ -35,27 +35,32 @@ const Navbar = () => {
         </div>
         <div className="flex flex-row items-center justify-between">
           <div className="hidden md:flex flex-row justify-center items-center text-sm">
-            <Link href={""}>
+            <Link href={"/louer"}>
               <button className="bg-slate-200-100 py-2 px-3 text-gray-600 hover:bg-gray-100 rounded-md hover:text-green-500">
                 Louer
               </button>
             </Link>
-            <Link href={""}>
+            <Link href={"/vendre"}>
               <button className="bg-slate-200-100 py-2 px-5 text-gray-600 hover:bg-gray-100 rounded-md hover:text-green-500">
                 Vendre
               </button>
             </Link>
-            <Link href={""}>
+            <Link href={"/residence"}>
               <button className="bg-slate-200-100 py-2 px-5 text-gray-600 hover:bg-gray-100 rounded-md hover:text-green-500">
                 Résidences
               </button>
             </Link>
           </div>
           <div className=" hidden md:flex flex-row items-center justify-center gap-2">
-            <button className=" flex flex-row items-center justify-center gap-1 bg-gray-100 py-2 px-3 text-sm text-green-400 rounded-md shadow-sm hover:bg-green-100">
-              <AiOutlineCloudUpload className="md:hidden lg:block" size={20} />{" "}
-              Ajouter
-            </button>
+            <Link href={"/create"}>
+              <button className=" flex flex-row items-center justify-center gap-1 bg-gray-100 py-2 px-3 text-sm text-green-400 rounded-md shadow-sm hover:bg-green-100">
+                <AiOutlineCloudUpload
+                  className="md:hidden lg:block"
+                  size={20}
+                />
+                Ajouter
+              </button>
+            </Link>
             <button className="bg-green-400 py-2 px-3 text-sm text-white rounded-md shadow-sm hover:bg-green-300">
               Connexion
             </button>
@@ -86,7 +91,7 @@ const Navbar = () => {
             </button>
           </Link>
           <button className="w-full flex flex-row items-center justify-center gap-1 bg-gray-100 py-1 px-6 text-xs text-green-400 rounded-md shadow-sm hover:bg-green-100">
-            <AiOutlineCloudUpload className="md:hidden lg:block" size={18} />{" "}
+            <AiOutlineCloudUpload className="md:hidden lg:block" size={18} />
             Ajouter
           </button>
           <button className="w-full bg-green-400 py-1 px-6 text-xs text-white rounded-md shadow-sm hover:bg-green-300">
