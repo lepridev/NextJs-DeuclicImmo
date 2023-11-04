@@ -5,9 +5,7 @@ export async function connect() {
 
   try {
     //Connexion de la base de donnée MONGODB
-    mongoose.connect(
-      "mongodb+srv://lepridev35:MpST1BaJovFblwU5@deuclicnextapp.qj71qeo.mongodb.net/?retryWrites=true&w=majority"
-    );
+    mongoose.connect(process.env.MONGODB_URI);
 
     //Creation d'une Constante "connexion"
     const connection = mongoose.connection;
