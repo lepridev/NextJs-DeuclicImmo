@@ -2,7 +2,15 @@ import React from "react";
 import { Typograpy } from "../typography/Typography";
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 
-const DetailBox = () => {
+interface Props {
+  bath: String;
+  bed: String;
+  square: String;
+  caution: String;
+  parking: String;
+}
+
+const DetailBox = ({ bath, bed, square, caution, parking }: Props) => {
   return (
     <div className="bg-white p-4  m-4 space-y-2 rounded-md">
       <div className="bg-gray-100 w-full h-6 flex items-center justify-start px-3 rounded-md">
@@ -13,19 +21,19 @@ const DetailBox = () => {
 
       <div className="grid grid-cols-2 gap-2 w-full">
         <Typograpy variant="body-sm" weight="semibold">
-          Chambre: <span>1</span>
+          Chambre: <span>{bed} </span>
         </Typograpy>
         <Typograpy variant="body-sm" weight="semibold">
-          Toillettes: <span>1</span>
+          Toillettes: <span>{bath}</span>
         </Typograpy>
         <Typograpy variant="body-sm" weight="semibold">
-          Balcon: <span>1</span>
+          parking: <span>{parking} </span>
         </Typograpy>
         <Typograpy variant="body-sm" weight="semibold">
-          Type dOffre: <span>1</span>
+          Caution: <span>{caution} </span>
         </Typograpy>
         <Typograpy variant="body-sm" weight="semibold">
-          Superficie: <span>1</span>
+          Superficie: <span>{square} </span>
         </Typograpy>
       </div>
     </div>

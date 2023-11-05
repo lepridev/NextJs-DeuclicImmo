@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Spinner from "@/ui/spinner/Spinner";
 import { icons } from "react-icons";
+import Link from "next/link";
 
 const RecentOfforts = () => {
   const [data, setData] = useState([]);
@@ -121,7 +122,7 @@ const RecentOfforts = () => {
           </div>
         ) : (
           <div className="w-full flex flex-col items-center justify-center gap-4 md:grid md:grid-cols-3  md:justify-center md:justify-items-center">
-            {data.map((offert) => (
+            {data.slice(0, 3).map((offert) => (
               <OffertBoxHorizontal
                 key={offert._id}
                 id={offert._id}
@@ -139,9 +140,11 @@ const RecentOfforts = () => {
         )}
 
         {loading === false && (
-          <Button className="mt-5" size="large">
-            Voir plus doffres
-          </Button>
+          <Link href={"/louer"}>
+            <Button className="mt-5" size="large">
+              Voir plus doffres
+            </Button>
+          </Link>
         )}
       </Container>
     </div>

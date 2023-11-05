@@ -8,6 +8,7 @@ import { BiArea } from "react-icons/bi";
 import { Typograpy } from "../typography/Typography";
 import { Button } from "../buttons/Button";
 import { AiFillHeart } from "react-icons/ai";
+import Link from "next/link";
 
 interface Props {
   id: string;
@@ -25,6 +26,7 @@ interface Props {
   titre?: string;
   rates?: number;
   buttonLabel: string;
+  href?: any;
 }
 
 const OffertBoxHorizontal = ({
@@ -43,6 +45,7 @@ const OffertBoxHorizontal = ({
   titre,
   rates = 3,
   buttonLabel,
+  href,
 }: Props) => {
   return (
     <div className=" w-[90%] h-[400px] border border-gray-10 rounded-md">
@@ -99,7 +102,9 @@ const OffertBoxHorizontal = ({
               {city}
             </Typograpy>
           </div>
-          <Button handleClick={() => {}}>{buttonLabel}</Button>
+          <Link href={`/louer/${id}`}>
+            <Button>{buttonLabel}</Button>
+          </Link>
         </div>
       </div>
     </div>
