@@ -4,23 +4,25 @@ import { Typograpy } from "../typography/Typography";
 
 interface Props {
   price?: number;
-  pack?: number;
+  pack?: String;
   buyCredit?: string;
   postFrequency?: string;
   expirationCredit?: string;
   assistance?: string;
   visibility?: string;
+  btnLabel: String;
   color?: "primary" | "secondary" | "free";
 }
 
 const PriceBox = ({
   price,
   pack,
-  buyCredit = "Acheter du credit pour poster vos offres",
+  buyCredit = "RENOUVELABLE",
   postFrequency = "24H de post gratuit",
   expirationCredit = "Sans credit dans le compte",
-  assistance = "Avec assistance à la demande",
+  assistance = "AVEC ASSISTANCE A LA DEMANDE",
   visibility = "Visibilité standard",
+  btnLabel,
   color = "free",
 }: Props) => {
   return (
@@ -38,7 +40,7 @@ const PriceBox = ({
           {price ? price : 0} FCFA
         </Typograpy>
         <Typograpy variant="h3" weight="bold" theme="primary">
-          {pack ? `${pack} MOIS DE POST` : "PREMIER POST GRATUIT"}
+          {pack}
         </Typograpy>
       </div>
       <div className="space-y-5 py-4">
@@ -84,7 +86,7 @@ const PriceBox = ({
         </Typograpy>
       </div>
       <div className="flex items-center justify-center w-full py-4">
-        <Button size="fullWidth">Essayer ce Pack</Button>
+        <Button size="fullWidth">{btnLabel}</Button>
       </div>
     </div>
   );
