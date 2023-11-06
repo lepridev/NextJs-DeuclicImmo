@@ -9,6 +9,8 @@ import { Typograpy } from "../typography/Typography";
 import { Button } from "../buttons/Button";
 import { AiFillHeart } from "react-icons/ai";
 import Link from "next/link";
+import Rating from "@/ui/rating/Rating";
+import StarRating from "@/ui/rating/Rating";
 
 interface Props {
   id: string;
@@ -63,14 +65,19 @@ const OffertBoxHorizontal = ({
       <div className="flex flex-col justify-start space-y-1 w-full h-3/5 py-4">
         <div className="space-y-2 px-4">
           <div className="flex flex-row items-center justify-between">
-            <div className="flex items-center justify-center py-1 px-2 rounded-2xl bg-gray-200">
-              <Typograpy variant="caption4" component="span" theme="secondary">
+            <div className="flex items-center justify-center py-1 px-2 rounded-md bg-gray-100">
+              <Typograpy
+                variant="caption4"
+                component="span"
+                theme="secondary"
+                weight="bold"
+              >
                 {titre}
               </Typograpy>
             </div>
             <div className="">
               <Typograpy
-                variant="body-sm"
+                variant="body-lg"
                 component="h3"
                 theme="secondary"
                 weight="bold"
@@ -81,21 +88,25 @@ const OffertBoxHorizontal = ({
           </div>
           <div className="mt-4 mb-2">
             <Typograpy
-              variant="lead"
+              variant="body-sm"
               weight="semibold"
               className="hover:text-[#ffa50d] cursor-pointer"
             >
               {location}
             </Typograpy>
-            <div className="font-bold">{rates}/5</div>
           </div>
-          <div className="flex flex-row items-center justify-end gap-3 pb-3">
-            <Comodite label={bed} icon={{ icon: FaBed }} />
-            <Comodite label={bath} icon={{ icon: FaBath }} />
-            <Comodite label={square} icon={{ icon: BiArea }} />
+          <div className="flex flex-row items-center justify-between gap-3 ">
+            <div>
+              <Rating />
+            </div>
+            <div className="flex flex-row items-center justify-between gap-3 pb-3">
+              <Comodite label={bed} icon={{ icon: FaBed }} />
+              <Comodite label={bath} icon={{ icon: FaBath }} />
+              <Comodite label={square} icon={{ icon: BiArea }} />
+            </div>
           </div>
         </div>
-        <div className="flex flex-row h-[50%] items-center justify-between px-4  border-t border-gray-300 ">
+        <div className="flex flex-row h-[40%] items-center justify-between px-4  border-t border-gray-300 ">
           <div className="flex items-center gap-2">
             <BiMap size={20} color="gray" />
             <Typograpy variant="body-sm" theme="gray">

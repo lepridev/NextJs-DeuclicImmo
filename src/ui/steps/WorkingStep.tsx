@@ -10,7 +10,7 @@ interface Props {
   color: string;
   bgColor: string;
   borderColor: string;
-  className: string;
+  className?: string;
 }
 
 const WorkingStep = ({ icon, label, description, color, className }: Props) => {

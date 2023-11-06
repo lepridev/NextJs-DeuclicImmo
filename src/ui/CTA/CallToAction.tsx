@@ -8,8 +8,8 @@ type Props = {};
 const CallToAction = (props: Props) => {
   return (
     <div className="bg-[#FFA50D]">
-      <Container className="flex flex-row items-center justify-between">
-        <div className="space-y-2">
+      <Container className="flex flex-row items-center justify-around py-6">
+        <div className="space-y-2 text-center">
           <Typograpy theme="white" weight="bold">
             Vous voulez devenir agent immobilier ?
           </Typograpy>
