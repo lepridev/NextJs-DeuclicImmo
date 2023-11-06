@@ -6,7 +6,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <div className="flex flex-row items-center justify-center space-x-10 p-10 bg-black">
+    <div className="flex flex-col justify-between items-stretch gap-5 md:flex-row md:items-center md:justify-center space-x-10 p-10 bg-black">
       <div className="flex flex-col items-center justify-center space-y-2">
         <div className="w-[200px] h-[90px] relative">
           <Image

@@ -24,14 +24,14 @@ const PriceBox = ({
   color = "free",
 }: Props) => {
   return (
-    <div className="w-[300px] p-3 border border-gray-200 rounded-md">
+    <div className="w-[300px] p-3 border border-gray-200 rounded-md bg-white">
       <div
         className={`flex flex-col items-center justify-center w-full h-[160px]  rounded-md ${
           color === "primary"
             ? "bg-[#E9F8EB]"
             : color === "secondary"
             ? "bg-[#c5cfb8]"
-            : "bg-[#E5F6FE]"
+            : "bg-[#FFF]"
         }`}
       >
         <Typograpy variant="h1" weight="bold" theme="secondary">

@@ -50,7 +50,7 @@ const OffertBoxHorizontal = ({
   href,
 }: Props) => {
   return (
-    <div className=" w-[90%] h-[400px] border border-gray-10 rounded-md">
+    <div className=" w-[90%] h-[400px] border border-gray-10 rounded-md bg-white">
       <div className=" flex flex-row items-start justify-start w-full h-[48%] relative">
         <Image
           src={imgSrc}
@@ -65,7 +65,7 @@ const OffertBoxHorizontal = ({
       <div className="flex flex-col justify-start space-y-1 w-full h-3/5 py-4">
         <div className="space-y-2 px-4">
           <div className="flex flex-row items-center justify-between">
-            <div className="flex items-center justify-center py-1 px-2 rounded-md bg-gray-100">
+            <div className="flex items-center justify-center py-1 px-2 rounded-md">
               <Typograpy
                 variant="caption4"
                 component="span"

@@ -15,10 +15,10 @@ interface Props {
 
 const WorkingStep = ({ icon, label, description, color, className }: Props) => {
   return (
-    <div className="flex flex-col items-center justify-between p-5 bg-white border border-gray-100 shadow-md max-w-sm rounded-md">
+    <div className="flex flex-col items-center justify-between p-10 bg-white border border-gray-100 shadow-md max-w-sm rounded-md">
       <div
         className={clsx(
-          "flex items-center justify-center p-3 mb-6 w-[60px] h-[60px] rounded-xl rotate-45 border-2",
+          "flex items-center justify-center p-3 mb-6 w-[100px] h-[100px] rounded-xl rotate-45 border-2",
           className
         )}
       >
