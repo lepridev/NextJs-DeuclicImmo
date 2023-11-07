@@ -1,27 +1,24 @@
-import AgentBox from "@/ui/box/AgentBox";
-import DescriptionBox from "@/ui/offert-ui-design/DescriptionBox";
-import DetailBox from "@/ui/offert-ui-design/DetailBox";
-import GalerieBox from "@/ui/offert-ui-design/GalerieBox";
-import InfrastructureBox from "@/ui/offert-ui-design/InfrastructureBox";
-import TitleBox from "@/ui/offert-ui-design/TitleBox";
+import OffertDescription from "@/components/offertDetails/OffertDescription";
+import OffertDetail from "@/components/offertDetails/OffertDetail";
+import OffertLocation from "@/components/offertDetails/OffertLocation";
+import OffertRecap from "@/components/offertDetails/OffertRecap";
 import axios from "axios";
 import Image from "next/image";
-import React, { useEffect } from "react";
 
 type Props = {};
 
 const OffertDetails = async ({ params }: any) => {
-  const id = params.id;
+  // const id = params.id;
 
-  const data = await getOffertById(id);
+  // const data = await getOffertById(id);
 
-  console.log("frontID", id);
-  console.log("data", data.data.getOffertById);
+  // console.log("frontID", id);
+  // console.log("data", data.data.getOffertById);
 
-  const OffertData = data.data.getOffertById;
+  // const OffertData = data.data.getOffertById;
 
   return (
-    <div className="flex flex-col items-center justify-center gap-7 w-full">
+    <div className="flex flex-col items-center justify-center gap-7 w-full bg-slate-200">
       <div className="h-[20%] flex flex-row w-full overflow-hidden ">
         <Image
           src={"/assets/images/p-1.jpg"}
@@ -45,26 +42,12 @@ const OffertDetails = async ({ params }: any) => {
           className="object-cover hover:scale-125 animate"
         />
       </div>
-      <div className="flex flex-row items-start justify-center">
-        <div className="w-[50%] ">
-          <TitleBox
-            titre={OffertData.titre}
-            location={OffertData.location}
-            price={OffertData.price}
-          />
-          <DetailBox
-            bath={OffertData.bath}
-            bed={OffertData.bed}
-            parking={OffertData.parking}
-            caution={OffertData.caution}
-            square={OffertData.square}
-          />
-          <DescriptionBox description={OffertData.description} />
-          <InfrastructureBox />
-          <GalerieBox />
-        </div>
-        <div className="w-[40%] ">
-          <AgentBox />
+      <div className="flex flex-row items-start justify-center w-full gap-7 ">
+        <div className="w-2/3 space-y-5">
+          <OffertRecap />
+          <OffertDetail />
+          <OffertDescription />
+          <OffertLocation />
         </div>
       </div>
     </div>
