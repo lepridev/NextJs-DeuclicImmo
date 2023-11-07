@@ -16,7 +16,7 @@ interface Props {
 }
 
 const BoxContainer = ({ children, className, title = "Titre" }: Props) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const isOpen = () => {
     setOpen(!open);
   };
@@ -36,14 +36,14 @@ const BoxContainer = ({ children, className, title = "Titre" }: Props) => {
           {open ? (
             <FaArrowCircleUp
               color="black"
-              size={15}
+              size={20}
               className="hover:scale-125 cursor-pointer"
               onClick={isOpen}
             />
           ) : (
             <FaArrowCircleDown
               color="black"
-              size={15}
+              size={20}
               className="hover:scale-125 cursor-pointer"
               onClick={isOpen}
             />
