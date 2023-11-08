@@ -6,6 +6,7 @@ import OffertLocation from "@/components/offertDetails/OffertLocation";
 import OffertRecap from "@/components/offertDetails/OffertRecap";
 import OffertReviews from "@/components/offertDetails/OffertReviews";
 import CallToAction from "@/ui/CTA/CallToAction";
+import CarouselBox from "@/ui/carousel/CarouselBox";
 import OffertAgentBox from "@/ui/container/OffertAgentBox";
 import ShareBox from "@/ui/container/ShareBox";
 import Footer from "@/ui/footer/Footer";
@@ -26,28 +27,10 @@ const OffertDetails = async ({ params }: any) => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-7 w-full bg-slate-200 ">
-      <div className="h-[20%] flex flex-row w-full overflow-hidden ">
-        <Image
-          src={"/assets/images/p-1.jpg"}
-          alt="Appartement"
-          width={500}
-          height={500}
-          className="object-cover hover:scale-125 animate"
-        />
-        <Image
-          src={"/assets/images/p-3.jpg"}
-          alt="Appartement"
-          width={500}
-          height={500}
-          className="object-cover hover:scale-125 animate"
-        />
-        <Image
-          src={"/assets/images/p-2.jpg"}
-          alt="Appartement"
-          width={500}
-          height={500}
-          className="object-cover hover:scale-125 animate"
-        />
+      <div id="carousel" className=" w-full">
+        <div className=" overflow-y-hidden z-20">
+          <CarouselBox />
+        </div>
       </div>
 
       <div className="flex flex-col md:flex-row items-start justify-center px-1 md:p-10 w-full gap-7 ">
@@ -66,6 +49,7 @@ const OffertDetails = async ({ params }: any) => {
       </div>
       <RecentOfforts />
       <CallToAction />
+
       <Footer />
     </div>
   );
