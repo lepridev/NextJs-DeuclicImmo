@@ -16,7 +16,7 @@ const OffertDetail = () => {
   let data = "3";
   return (
     <BoxContainer title="Details">
-      <div className="flex flex-row justify-between items-start w-1/2 pt-5 gap-10 flex-wrap">
+      <div className="flex flex-row md:justify-between justify-start items-start  w-full md:w-1/2 pt-5 gap-5 md:gap-10 flex-wrap">
         {details.map((detail, index) => (
           <div key={index}>
             <Typograpy variant="caption2" component="span" weight="medium">

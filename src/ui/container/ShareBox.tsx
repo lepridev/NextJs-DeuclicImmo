@@ -1,14 +1,6 @@
 "use client";
 
-import clsx from "clsx";
-import React, { useState } from "react";
-import {
-  FaArrowCircleDown,
-  FaArrowCircleUp,
-  FaArrowDown,
-  FaSave,
-  FaShare,
-} from "react-icons/fa";
+import { FaSave, FaShare } from "react-icons/fa";
 import { Typograpy } from "../typography/Typography";
 
 const ShareBox = () => {
@@ -17,8 +9,8 @@ const ShareBox = () => {
       <Typograpy variant="body-lg" component="span" weight="bold">
         Partager
       </Typograpy>
-      <div className="flex  flex-row items-center justify-center gap-5">
-        <div className="flex flex-col items-center justify-center p-4 rounded-md border border-green-500 cursor-pointer">
+      <div className="flex flex-row items-center justify-center gap-5">
+        <div className="flex flex-col items-center justify-center p-3 md:p-4 rounded-md border border-green-500 cursor-pointer">
           <Typograpy
             variant="body-lg"
             component="span"
@@ -29,7 +21,7 @@ const ShareBox = () => {
             Partager
           </Typograpy>
         </div>
-        <div className="flex flex-col items-center justify-center p-4 rounded-md border border-orange-500  cursor-pointer">
+        <div className="flex flex-col items-center justify-center p-3 md:p-4 rounded-md border border-orange-500  cursor-pointer">
           <Typograpy
             variant="body-lg"
             component="span"

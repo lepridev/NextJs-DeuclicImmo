@@ -4,7 +4,6 @@ import OffertGaleries from "@/components/offertDetails/OffertGaleries";
 import OffertLocation from "@/components/offertDetails/OffertLocation";
 import OffertRecap from "@/components/offertDetails/OffertRecap";
 import OffertReviews from "@/components/offertDetails/OffertReviews";
-import Container from "@/ui/container/Container";
 import OffertAgentBox from "@/ui/container/OffertAgentBox";
 import ShareBox from "@/ui/container/ShareBox";
 import axios from "axios";
@@ -48,8 +47,8 @@ const OffertDetails = async ({ params }: any) => {
         />
       </div>
 
-      <div className="flex flex-row items-start justify-center p-10 w-full gap-7 ">
-        <div className="w-2/3 space-y-5">
+      <div className="flex flex-col md:flex-row items-start justify-center px-3 md:p-10 w-full gap-7 ">
+        <div className="w-full md:w-2/3 space-y-3 md:space-y-5">
           <OffertRecap />
           <OffertDetail />
           <OffertDescription />
@@ -57,7 +56,7 @@ const OffertDetails = async ({ params }: any) => {
           <OffertGaleries />
           <OffertReviews />
         </div>
-        <div className="w-1/3 space-y-5">
+        <div className="w-full md:w-1/3 space-y-3 md:space-y-5">
           <ShareBox />
           <OffertAgentBox />
         </div>

@@ -21,12 +21,11 @@ const OffertAgentBox = () => {
   return (
     <div className="flex flex-col justify-center gap-2 border pb-3 rounded-lg bg-white shadow-md ">
       <div className="flex flex-row items-center justify-start gap-5 p-3 bg-green-400 rounded-t-lg">
-        <div className="w-[50] h-[50] rounded-full border border-red-100 ">
+        <div className="w-[70px] h-[70px] rounded-full border border-red-100 relative ">
           <Image
             src={"/assets/images/photoProfile.png"}
             alt="profil"
-            width={70}
-            height={70}
+            fill
             className="rounded-full"
           />
         </div>
