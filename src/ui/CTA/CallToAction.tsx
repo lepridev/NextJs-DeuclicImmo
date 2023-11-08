@@ -7,7 +7,7 @@ type Props = {};
 
 const CallToAction = (props: Props) => {
   return (
-    <div className="bg-[#FFA50D]">
+    <div className="bg-[#FFA50D] w-full">
       <Container className="flex flex-col md:flex-row items-center justify-center md:justify-around gap-5 py-6">
         <div className="space-y-2 text-center">
           <Typograpy theme="white" weight="bold">

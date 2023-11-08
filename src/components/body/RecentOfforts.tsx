@@ -109,7 +109,7 @@ const RecentOfforts = () => {
   console.log("data", data);
 
   return (
-    <div className="bg-slate-50">
+    <div className="bg-slate-50 w-full">
       <Container className="flex flex-col items-center justify-center">
         <Titleline
           title="Explorer dans les Meilleurs Androits"

@@ -1,11 +1,14 @@
+import RecentOfforts from "@/components/body/RecentOfforts";
 import OffertDescription from "@/components/offertDetails/OffertDescription";
 import OffertDetail from "@/components/offertDetails/OffertDetail";
 import OffertGaleries from "@/components/offertDetails/OffertGaleries";
 import OffertLocation from "@/components/offertDetails/OffertLocation";
 import OffertRecap from "@/components/offertDetails/OffertRecap";
 import OffertReviews from "@/components/offertDetails/OffertReviews";
+import CallToAction from "@/ui/CTA/CallToAction";
 import OffertAgentBox from "@/ui/container/OffertAgentBox";
 import ShareBox from "@/ui/container/ShareBox";
+import Footer from "@/ui/footer/Footer";
 import axios from "axios";
 import Image from "next/image";
 
@@ -47,7 +50,7 @@ const OffertDetails = async ({ params }: any) => {
         />
       </div>
 
-      <div className="flex flex-col md:flex-row items-start justify-center px-3 md:p-10 w-full gap-7 ">
+      <div className="flex flex-col md:flex-row items-start justify-center px-1 md:p-10 w-full gap-7 ">
         <div className="w-full md:w-2/3 space-y-3 md:space-y-5">
           <OffertRecap />
           <OffertDetail />
@@ -61,6 +64,9 @@ const OffertDetails = async ({ params }: any) => {
           <OffertAgentBox />
         </div>
       </div>
+      <RecentOfforts />
+      <CallToAction />
+      <Footer />
     </div>
   );
 };

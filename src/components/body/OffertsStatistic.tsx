@@ -14,7 +14,7 @@ const OffertsStatistic = () => {
           nam."
         />
       </div>
-      <div className="flex flex-row items-center justify-center">
+      <div className="flex md:flex-row flex-col items-center justify-center">
         <Titleline title="+1300" description="Offres en location" />
         <Titleline title="+723" description="Offres en vente" />
         <Titleline title="+288" description="Appartement meublés" />
