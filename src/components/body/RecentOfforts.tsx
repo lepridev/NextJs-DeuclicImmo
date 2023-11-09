@@ -122,7 +122,7 @@ const RecentOfforts = () => {
           </div>
         ) : (
           <div className="w-full flex flex-col items-center justify-center gap-4 md:grid md:grid-cols-3  md:justify-center md:justify-items-center">
-            {data.slice(0, 3).map((offert) => (
+            {data?.slice(0, 3).map((offert) => (
               <OffertBoxHorizontal
                 key={offert._id}
                 id={offert._id}

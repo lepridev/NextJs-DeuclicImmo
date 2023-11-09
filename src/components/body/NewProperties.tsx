@@ -1,10 +1,6 @@
 import OffertBoxHorizontal from "@/ui/box/OffertBoxHorizontal";
 import Container from "@/ui/container/Container";
 import { Titleline } from "@/ui/titleLine/titleline";
-import React from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import Image from "next/image";
 
 const NewProperties = () => {
   return (

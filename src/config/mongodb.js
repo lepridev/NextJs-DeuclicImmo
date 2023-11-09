@@ -19,10 +19,10 @@ export async function connect() {
     //Nous verifions si la connexion est faites, si non, log(erreur de connexion)
     connection.on("error", (err) => {
       console.log(
-        "MongoDB connection error. Please maje sure MongoDB is running.",
+        "MongoDB connection error. Please make sure MongoDB is running.",
         +err
       );
-      process.exit();
+      // process.exit();
     });
   } catch (error) {
     console.log("something goes wrong");

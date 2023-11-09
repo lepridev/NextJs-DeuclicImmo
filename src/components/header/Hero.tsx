@@ -1,17 +1,39 @@
 import Image from "next/image";
 import React from "react";
 import { AiOutlineFileSearch } from "react-icons/ai";
+import CarouselBox from "@/ui/carousel/CarouselBox";
 
 const Hero = () => {
+  const images = [
+    {
+      imgSrc: "/assets/images/maisong.jpeg",
+      legend: "Legende 1",
+    },
+    {
+      imgSrc: "/assets/images/maison2.jpg",
+      legend: "Legende 2",
+    },
+  ];
+
   return (
-    <div className="w-full h-[300px] md:h-[500px] flex flex-col items-center justify-center relative ">
-      <Image
+    <div className="w-full  overflow-hidden md:h-[500px] flex flex-col items-center justify-center relative ">
+      <div className="w-full">
+        <CarouselBox
+          images={images}
+          autoplay={"autoplay"}
+          infiniteLoop={"infiniteLoop"}
+          interval={10000}
+          legend={false}
+        />
+      </div>
+
+      {/* <Image
         src={"/assets/images/maisong.jpeg"}
         alt="deuclic cocody"
         fill
         className="absolute object-cover -z-10"
-      />
-      <div className="w-full flex flex-col items-start md:items-center justify-center px-2 md:px-7">
+      /> */}
+      <div className="w-full flex flex-col items-start md:items-center justify-center px-2 md:px-7 absolute top-1/3 left-5 right-5">
         <div>
           <h2 className="text-slate-100 text-2xl md:text-3xl font-bold">
             Toutes les offres immobilières maintenant disponibles

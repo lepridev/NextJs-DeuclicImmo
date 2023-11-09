@@ -5,12 +5,13 @@ import { Button } from "@/ui/buttons/Button";
 import Container from "@/ui/container/Container";
 import Spinner from "@/ui/spinner/Spinner";
 import { Titleline } from "@/ui/titleLine/titleline";
+import { Typograpy } from "@/ui/typography/Typography";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const Louer = ({ data }: any) => {
   const [AllOfferts, setAllOfferts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const getAllData = async () => {
     setLoading(true);
@@ -39,21 +40,29 @@ const Louer = ({ data }: any) => {
           </div>
         ) : (
           <div className="w-full flex flex-col items-center justify-center gap-4 md:grid md:grid-cols-3  md:justify-center md:justify-items-center">
-            {AllOfferts.map((offert) => (
-              <OffertBoxHorizontal
-                key={offert._id}
-                id={offert._id}
-                bath={offert.bath}
-                bed={offert.bed}
-                city={offert.city}
-                location={offert.location}
-                buttonLabel="Voir"
-                titre={offert.titre}
-                square={offert.square}
-                price={offert.price}
-                href={offert._id}
-              />
-            ))}
+            {AllOfferts !== undefined ? (
+              AllOfferts.map((offert) => (
+                <OffertBoxHorizontal
+                  key={offert._id}
+                  id={offert._id}
+                  bath={offert.bath}
+                  bed={offert.bed}
+                  city={offert.city}
+                  location={offert.location}
+                  buttonLabel="Voir"
+                  titre={offert.titre}
+                  square={offert.square}
+                  price={offert.price}
+                  href={offert._id}
+                />
+              ))
+            ) : (
+              <div className=" md:w-full flex flex-row items-center justify-center text-center">
+                <Typograpy>
+                  Désolé, il semble que vous avez un problème de connexion
+                </Typograpy>
+              </div>
+            )}
           </div>
         )}
 

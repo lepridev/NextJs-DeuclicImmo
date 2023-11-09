@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full h-[60px] mx-auto flex flex-row justify-between items-center px-3 py-2 border-b-2 border-green-600 shadow-lg">
+    <div className="w-full h-[60px] mx-auto flex flex-row justify-between items-center px-3 py-2 border-b-2 border-green-600 shadow-lg z-30">
       <div className="w-1/3 flex flex-row items-center justify-center relative">
         <Link href={"/"} className="flex flex-col items-center justify-center">
           <Image

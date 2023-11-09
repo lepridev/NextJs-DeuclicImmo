@@ -25,11 +25,26 @@ const OffertDetails = async ({ params }: any) => {
 
   // const OffertData = data.data.getOffertById;
 
+  const images = [
+    {
+      imgSrc: "/assets/images/maison1.jpg",
+      legend: "Legende 1",
+    },
+    {
+      imgSrc: "/assets/images/maison2.jpg",
+      legend: "Legende 2",
+    },
+    {
+      imgSrc: "/assets/images/maison3.jpg",
+      legend: "Legende 3",
+    },
+  ];
+
   return (
     <div className="flex flex-col items-center justify-center gap-7 w-full bg-slate-200 ">
       <div id="carousel" className=" w-full">
         <div className=" overflow-y-hidden z-20">
-          <CarouselBox />
+          <CarouselBox images={images} />
         </div>
       </div>
 
