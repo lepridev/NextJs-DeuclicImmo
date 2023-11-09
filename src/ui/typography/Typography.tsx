@@ -93,7 +93,7 @@ export const Typograpy = ({
       colorStyles = "text-[#ffa50d]";
       break;
     case "danger":
-      colorStyles = "text-alert-danger";
+      colorStyles = "#FA7070";
       break;
     case "success":
       colorStyles = "text-alert-success";

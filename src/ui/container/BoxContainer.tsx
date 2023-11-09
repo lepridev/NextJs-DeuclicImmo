@@ -13,9 +13,15 @@ interface Props {
   children: React.ReactNode;
   className?: string;
   title?: string;
+  openBtn: boolean;
 }
 
-const BoxContainer = ({ children, className, title = "Titre" }: Props) => {
+const BoxContainer = ({
+  children,
+  className,
+  title = "Titre",
+  openBtn,
+}: Props) => {
   const [open, setOpen] = useState(true);
   const isOpen = () => {
     setOpen(!open);
@@ -32,23 +38,25 @@ const BoxContainer = ({ children, className, title = "Titre" }: Props) => {
         <Typograpy variant="body-lg" component="span" weight="bold">
           {title}
         </Typograpy>
-        <div>
-          {open ? (
-            <FaArrowCircleUp
-              color="black"
-              size={20}
-              className="hover:scale-125 cursor-pointer"
-              onClick={isOpen}
-            />
-          ) : (
-            <FaArrowCircleDown
-              color="black"
-              size={20}
-              className="hover:scale-125 cursor-pointer"
-              onClick={isOpen}
-            />
-          )}
-        </div>
+        {openBtn && (
+          <div>
+            {open ? (
+              <FaArrowCircleUp
+                color="black"
+                size={20}
+                className="hover:scale-125 cursor-pointer"
+                onClick={isOpen}
+              />
+            ) : (
+              <FaArrowCircleDown
+                color="black"
+                size={20}
+                className="hover:scale-125 cursor-pointer"
+                onClick={isOpen}
+              />
+            )}
+          </div>
+        )}
       </div>
       <div className={clsx(open === false ? "hidden" : "")}>{children}</div>
     </div>

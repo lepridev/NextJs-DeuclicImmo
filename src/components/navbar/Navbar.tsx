@@ -61,9 +61,11 @@ const Navbar = () => {
                 Ajouter
               </button>
             </Link>
-            <button className="bg-green-400 py-2 px-3 text-sm text-white rounded-md shadow-sm hover:bg-green-300">
-              Connexion
-            </button>
+            <Link href={"/login"}>
+              <button className="bg-green-400 py-2 px-3 text-sm text-white rounded-md shadow-sm hover:bg-green-300">
+                Connexion
+              </button>
+            </Link>
             {/* <button className="bg-gray-100 py-2 px-3 text-sm text-gray-500 rounded-md shadow-sm  hover:bg-slate-100">
               Inscription
             </button> */}
