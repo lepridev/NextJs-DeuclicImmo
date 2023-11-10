@@ -1,7 +1,7 @@
 import { Typograpy } from "../typography/Typography";
 
 interface Props {
-  type?: "text" | "email" | "password";
+  type?: "text" | "email" | "password" | "file";
   placeholder: string;
   register?: any;
   errors?: any;
@@ -20,7 +20,7 @@ const Input = ({
   required = true,
 }: Props) => {
   return (
-    <div className="flex flex-row items-center justify-center p-2 gap-2 rounded-md">
+    <div className="flex flex-col items-center justify-center p-2 gap-2 rounded-md">
       <input
         id={id}
         type={type}
@@ -33,7 +33,7 @@ const Input = ({
 
       {errors[id] && (
         <Typograpy variant="caption1" theme="secondary" component="div">
-          {/* {errors[id]?.message} */} Error Message
+          {errors[id]?.message}
         </Typograpy>
       )}
     </div>

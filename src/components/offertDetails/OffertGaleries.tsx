@@ -22,7 +22,7 @@ const OffertGaleries = () => {
   ];
 
   return (
-    <BoxContainer title="Galeries">
+    <BoxContainer openBtn title="Galeries">
       <div className="flex md:flex-row items-center justify-start flex-wrap gap-3 pt-5">
         {images.map((image, index) => (
           <Image

@@ -9,7 +9,7 @@ import { GiTakeMyMoney } from "react-icons/gi";
 
 const OffertRecap = () => {
   return (
-    <BoxContainer title="Récapitulatif">
+    <BoxContainer title="Récapitulatif" openBtn={false}>
       <div className="flex flex-col justify-center pt-5 gap-1 md:gap-2">
         <div className="flex flex-row items-center justify-center w-20 rounded-full  px-5 py-3 border border-red-100">
           <Typograpy variant="caption1" weight="bold" component="span">

@@ -1,14 +1,17 @@
 "use client";
 
 import { Button } from "@/ui/buttons/Button";
-import BoxContainer from "@/ui/container/BoxContainer";
 import Input from "@/ui/inputs/Input";
 import { Typograpy } from "@/ui/typography/Typography";
+import axios from "axios";
 import Link from "next/link";
-import React from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const SignupBox = () => {
+  const [img, setImg] = useState("");
+  const [video, setVideo] = useState("");
+
   const {
     register,
     handleSubmit,
@@ -17,8 +20,52 @@ const SignupBox = () => {
     formState: { errors },
   } = useForm();
 
+  const uploadFile = async (type: any) => {
+    const data = new FormData();
+    data.append("file", type === "image" ? img : video);
+    data.append("upload_preset", "images_preset");
+
+    try {
+      let api = `https://api.cloudinary.com/v1_1/dlliywj6u/image/upload`;
+
+      const res = await axios.post(api, data);
+
+      const { secure_url } = res.data;
+      console.log(secure_url);
+
+      return secure_url;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const onSubmit = async (data: any) => {
-    console.log(data);
+    console.log("data", data);
+    setImg(data.file[0]);
+    const file = new FormData();
+    file.append("file", img);
+    file.append("upload_preset", "images_preset");
+
+    try {
+      let api = `https://api.cloudinary.com/v1_1/dlliywj6u/image/upload`;
+
+      const getUrl = await axios.post(api, file);
+
+      const { secure_url } = getUrl.data;
+      console.log(secure_url);
+
+      data.file = secure_url;
+      console.log("dataWithUrl", data);
+
+      const res = await axios.post(
+        "http://localhost:3000/api/users/signup",
+        data
+      );
+
+      console.log("resAfterPost", res);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -101,8 +148,22 @@ const SignupBox = () => {
             />
             <Input
               type="password"
-              id="password"
+              id="repassword"
               placeholder="Confirmer Mot de passe"
+              register={register}
+              errors={errors}
+              errorMsg="Veuillez renseigné tous les champs"
+              required
+            />
+          </div>
+          <div>
+            <Typograpy variant="caption1" component="p">
+              Avatar
+            </Typograpy>
+            <Input
+              type="file"
+              id="file"
+              placeholder="Selectionner une image"
               register={register}
               errors={errors}
               errorMsg="Veuillez renseigné tous les champs"

@@ -5,7 +5,7 @@ import React from "react";
 
 const OffertLocation = () => {
   return (
-    <BoxContainer title="Localisation">
+    <BoxContainer openBtn title="Localisation">
       <div className="pt-5">
         <div>
           <Typograpy variant="lead" component="p" theme="gray">

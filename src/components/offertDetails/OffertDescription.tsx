@@ -4,7 +4,7 @@ import React from "react";
 
 const OffertDescription = () => {
   return (
-    <BoxContainer title="Description">
+    <BoxContainer openBtn title="Description">
       <div className="pt-5">
         <Typograpy variant="lead" component="p" theme="gray">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi in

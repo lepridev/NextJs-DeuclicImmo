@@ -33,7 +33,7 @@ const Hero = () => {
         fill
         className="absolute object-cover -z-10"
       /> */}
-      <div className="w-full flex flex-col items-start md:items-center justify-center px-2 md:px-7 absolute top-1/3 left-5 right-5">
+      <div className="w-full flex flex-col items-start md:items-center justify-center px-2 md:px-7 absolute top-10 md:top-1/3 left-5 right-5">
         <div>
           <h2 className="text-slate-100 text-2xl md:text-3xl font-bold">
             Toutes les offres immobilières maintenant disponibles
