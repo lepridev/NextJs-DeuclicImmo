@@ -66,6 +66,7 @@ const SignupBox = () => {
     } catch (error) {
       console.error(error);
     }
+    reset();
   };
 
   return (
