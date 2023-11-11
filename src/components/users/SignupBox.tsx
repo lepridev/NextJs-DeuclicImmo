@@ -20,25 +20,6 @@ const SignupBox = () => {
     formState: { errors },
   } = useForm();
 
-  const uploadFile = async (type: any) => {
-    const data = new FormData();
-    data.append("file", type === "image" ? img : video);
-    data.append("upload_preset", "images_preset");
-
-    try {
-      let api = `https://api.cloudinary.com/v1_1/dlliywj6u/image/upload`;
-
-      const res = await axios.post(api, data);
-
-      const { secure_url } = res.data;
-      console.log(secure_url);
-
-      return secure_url;
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   const onSubmit = async (data: any) => {
     console.log("data", data);
     setImg(data.file[0]);

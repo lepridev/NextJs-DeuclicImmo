@@ -4,9 +4,11 @@ import { Button } from "@/ui/buttons/Button";
 import BoxContainer from "@/ui/container/BoxContainer";
 import Input from "@/ui/inputs/Input";
 import { Typograpy } from "@/ui/typography/Typography";
+import axios from "axios";
 import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const LoginBox = () => {
   const {
@@ -18,7 +20,20 @@ const LoginBox = () => {
   } = useForm();
 
   const onSubmit = async (data: any) => {
-    console.log(data);
+    try {
+      const res = await axios.post(
+        "http://localhost:3000/api/users/login",
+        data
+      );
+
+      if (res.status === 200) {
+        console.log(res.data);
+        toast.success(res.data.message);
+      }
+    } catch (error: any) {
+      console.log(error.message);
+      toast.error(error.message);
+    }
   };
 
   return (
